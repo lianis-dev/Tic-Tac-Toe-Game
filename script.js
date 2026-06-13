@@ -66,15 +66,32 @@ cells.forEach((cells, index) => {
                 startButton.textContent = 'Start Game';
                 startButton.disabled = false;
                 return;
-            }
+
+            }else{
+                let allFull = true;
+                for(let i=0; i<9; i++){
+                    if(board[i] === 0){
+                        allFull = false;
+                        break;
+                    }
+                }
+                if(allFull === true && someoneWon === false){
+                    currentPlayerText.textContent = `It's a tie!`;
+                    gameActive = false;
+                
+                    startButton.textContent = 'Start Game';
+                    startButton.disabled = false;
+                    return;
+                }
+            } 
 
             if(currentPlayer === 1){
                 currentPlayer = 2;
             }else{
              currentPlayer = 1;
-            } //
-
+            } 
+            
             currentPlayerText.textContent = `Current Player: ${currentPlayer}`;
-        } //
+        }
     })
 })
