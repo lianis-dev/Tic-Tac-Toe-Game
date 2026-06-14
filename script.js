@@ -37,6 +37,8 @@ startButton.addEventListener('click', () => { //on click
     startButton.disabled = true; //the button cannot be clicked again
 
     currentPlayerText.classList.remove('hidden'); 
+    counter1.classList.remove('hidden');
+    counter2.classList.remove('hidden');
     title.classList.add('hidden');
 } )
 
