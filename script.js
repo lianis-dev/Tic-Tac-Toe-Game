@@ -2,6 +2,8 @@ const startButton = document.querySelector('#startButton');
 const cells = document.querySelectorAll('.cell');
 const title = document.querySelector('.title');
 const currentPlayerText = document.querySelector('.currentPlayer')
+const counter1 = document.querySelector('.counter1')
+const counter2 = document.querySelector('.counter2')
 
 const winningCombinations = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], 
@@ -12,6 +14,8 @@ const winningCombinations = [
 let gameActive = false; //variable to track if the game has starter
 let currentPlayer = 1; //starts with player 1 by default
 let winner;
+let wins1 = 0;
+let wins2 = 0;
 
 let board = [ //board matrix with all values set to 0, empty
     0,0,0,
@@ -61,6 +65,13 @@ cells.forEach((cells, index) => {
 
             if (someoneWon) {
                 currentPlayerText.textContent = `Winner: Player ${winner === 1 ? '1' : '2'}`;
+                if(winner === 1){
+                    wins1++;
+                    counter1.textContent = `Player 1: ${wins1}`
+                }else{
+                    wins2++;
+                    counter2.textContent = `Player 2: ${wins2}`
+                }
                 gameActive = false;
                 
                 startButton.textContent = 'Start Game';
