@@ -72,28 +72,32 @@ main{
     color: white;
 }
 
-@media (max-width: 768px){
-    .main{
+@media (max-width: 768px) {
+    .main {
+        gap: 15px; 
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-height: 100vh;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .counters, .currentPlayer{
-        position: static;
-        margin-bottom: 15px;
-        text-align: center;
     }
 
     .title {
-        font-size: 45px;
+        font-size: 40px; 
+        text-align: center;
+        width: 100%;
+    }
+
+    .startButton {
+        margin: 0 auto;  
+    }
+
+    .counters {
+        position: static; 
+        text-align: center;
+        font-size: 24px;
     }
 
     .currentPlayer {
-        font-size: 35px;
+        font-size: 30px; 
     }
 }
